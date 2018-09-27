@@ -31,7 +31,7 @@ router.post('/', (req, res, next) => {
     status: 'pending',
   };
 
-  let newOrder = messanger.addOrder(order);
+  const newOrder = messanger.addOrder(order);
   if (newOrder) {
     res.status(201).json({
       status: 201,
@@ -41,6 +41,23 @@ router.post('/', (req, res, next) => {
   } else {
     res.status(500).json({
       message: 'Failed to place a new order'
+    });
+  }
+});
+
+//  Handle GET request for a particular orders specified by ID
+router.get('/:orderID', (req, res, next) => {
+  const id = req.params.orderID;
+  const order = messanger.getOrder(id);
+  if (order) {
+    res.status(200).json({
+      "status": 200,
+      "message": "successful",
+      "result": order
+    });
+  } else {
+    res.status(404).json({
+      error: 'The specified id does not match any order in our system',
     });
   }
 });
