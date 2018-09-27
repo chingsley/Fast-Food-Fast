@@ -62,4 +62,26 @@ router.get('/:orderID', (req, res, next) => {
   }
 });
 
+//Handle PUT request updating an order, like setting the status of an order: "pending", "complete", or "declined"
+router.put('/:orderID', (req, res, next) => {
+  // console.log(req.body.status);
+    const id = req.params.orderID;
+    let obj = {
+      status: req.body.status
+    }
+
+    let updatedOrder = messanger.updateOrder(id, obj);
+    if(updatedOrder){
+      res.status(200).json({
+        status: 200,
+        message: 'order update: Successful!',
+        // order: updatedOrder,
+      });
+    }else {
+      res.status(404).json({
+        error: "not found"
+      });
+    }
+});
+
 module.exports = router;

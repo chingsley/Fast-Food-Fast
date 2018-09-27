@@ -27,6 +27,7 @@ describe('API endpoint /orders', function() {
       });// end then()
   });// end it()
 
+
   // POST - an  order
   it('should return a specific order', () => {
     return chai.request(app)
@@ -47,6 +48,20 @@ describe('API endpoint /orders', function() {
         expect(res.body.result).to.be.an('object');
       });// end then()
   });// end it()
+
+
+  // GET - a specific order
+  it('should return a specific order', () => {
+    return chai.request(app)
+      .put('/api/v1/orders/R002')
+      .then(function(res){
+        expect(res).to.have.status(200);
+        expect(res.body).to.be.an('object');
+        // expect(res.body.result).to.be.an('object');
+      });// end then()
+  });// end it()
+
+
 
 
 });// ENDS THE MAIN describe()
