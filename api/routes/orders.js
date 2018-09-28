@@ -69,7 +69,6 @@ router.put('/:orderID', (req, res, next) => {
     let obj = {
       status: req.body.status
     }
-
     let updatedOrder = messanger.updateOrder(id, obj);
     if(updatedOrder){
       res.status(200).json({
@@ -82,6 +81,21 @@ router.put('/:orderID', (req, res, next) => {
         error: "not found"
       });
     }
+});
+
+
+//Handle DELETE request to delete an order
+router.delete('/:orderID', (req, res, next) => {
+  if(messanger.deleteOrder(req.params.orderID)){
+    // note: status code 204 means no content, and hence no content will be returned, but the delete method will be successful
+    res.status(204).json({
+      message: 'Order '+ req.params.orderID + ' deleted!',
+    });
+  }else {
+    res.status(404).json({
+      error: 'Order '+ req.params.orderID + ' not found.'
+    });
+  }
 });
 
 module.exports = router;
