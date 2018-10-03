@@ -4,12 +4,83 @@
 }
 
 body {
-  /* background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),  url('../images/food1.jpg') no-repeat; */
+  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),  url('../images/food1.jpg') no-repeat;
   background-position: top;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header{
+  height: 50px;
+  width: 100%;
+  /* background-color: #E0AF1A; */
+
+}
+
+
+
+.header-grid-container, .grid-item {
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+
+.navigationDiv {
+  /* background-color: #00bab1; */
+  background-color: black;
+  height: 80px;
+  padding: 3px;
+  line-height: 80px;
+  color: white;
+  opacity: 0.8;
+}
+
+.left-links {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  float: right;
+  margin-right: 50px;
+  color: white;
+  /* border: 1px solid #00BAB1;
+  background-color: #00BAB1; */
+  width: 100px;
+  padding-left: 2px;
+  padding-right: 2px;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  margin-top: 20px;
+  /* border: 1px solid #E0AF1A; */
+  border-bottom: 1px solid #00BAB1;
+}
+
+.left-links:hover {
+  /* text-decoration: underline; */
+  /* background-color: #E0AF1A; */
+  background-color: #00BAB1;
+  color: black;
+  /* color: #E0AF1A; */
+  /* color: #00BAB1; */
+}
+
+#home-link {
+  height: 50px;
+  width: 50px;
+  margin-left: 50px;
+  margin-top: 20px;
+  /* border: 5px solid #00BAB1; */
+  border-radius: 5px;
+}
+
+#home-link:hover {
+  background-color: #00BAB1;
 }
 
 .section_container {
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),  url('../images/food5.jpg') no-repeat;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),  url('../images/food1.jpg') no-repeat;
   height: 30vh;
   background-size: cover;
   -webkit-background-size: cover;
@@ -19,9 +90,6 @@ body {
 
 
 .middleDiv {
-  /* background-color: #00BAB1; */
-  /* background-color: #E0AF1A; */
-  background-color: black;
   line-height: 30px;
   text-align: center;
   font-weight: bold;
@@ -29,61 +97,24 @@ body {
   padding: 1px;
 }
 
+.behind-the-lowerDiv {
+  /* opacity: 0.6; */
+}
+
 .lowerDiv {
-  background-color: #282C34;
-  /* background-color: #666666; */
-  /* background-color: #21252B; */
-  /* background-color: #F1F1F1; */
-  /* height: 600px; */
+  background-color: #293038;
+  /* opacity: 0.6; */
   padding-bottom: 20px;
   padding-top: 10px;
-  display: grid;
-  grid-template-columns: 1fr 8fr;
-  grid-auto-rows: minmax(80px, auto);
-  /* opacity: 0.95; */
-}
-
-
-.divLinks {
-  /* border: 1px solid white; */
-  padding-top: 50px;
-  border-right: 1px solid #282C34;
-  /* background-color: #122601; */
-}
-
-.links {
-  width: 80%;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  margin-bottom: 20px;
-  margin-left: 10px;
-  background-color: #E0AF1A;
-  /* background-color: #282C34; */
-
-  font-size: 14px;
-  cursor: pointer;
-  border-radius: 5px;
 
 }
 
-.links:hover, .links a:hover {
-  background: #E0AF1A;
-}
-
-.links a {
-  /* color: black; */
-  color: white;
-  text-decoration: none;
-  /* padding: 20px; */
-}
 
 .grid-container {
   display: grid;
   /* grid-template-columns: 33.3% 33.3% 33.3%; */
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  /* grid-template-columns: repeat(3, 1fr); */
-  grid-auto-rows: minmax(200px, auto);
+  grid-auto-rows: minmax(100px, auto);
   /* grid-gap: 20px; */
   grid-row-gap: 30px;
   grid-column-gap: 10px;
@@ -93,7 +124,8 @@ body {
 }
 
 .grid-item {
-  color: white;
+  /* color: white; */
+  color: black;
 }
 
 /* #item_1 {
@@ -110,8 +142,11 @@ body {
 
 
 #descDivs {
+  color: white;
   margin-right: 20px;
   border: none;
+  border-top: 1px solid #E0AF1A;
+  border-bottom: 1px solid #E0AF1A;
   /* grid-column-gap: 50px; */
 }
 
@@ -123,8 +158,8 @@ body {
   margin-bottom: 10px;
   /* font-size: 1em; */
   font-weight: bold;
-  color: yellow;
-  color: #00bab1;
+  /* color: #00bab1; */
+  color: #E0AF1A;
 }
 
 .checkbox {
@@ -137,7 +172,7 @@ input[name="quantity"] {
   padding: 5px;
 }
 
-img:hover {
+.grid-item img:hover {
   /* outline: 5px solid red; */
   transform: scale(1.1);
   transition: all, .5s;
