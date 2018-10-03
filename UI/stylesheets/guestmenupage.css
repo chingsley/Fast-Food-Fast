@@ -14,7 +14,7 @@ body {
 .header{
   height: 50px;
   width: 100%;
-  background-color: #E0AF1A;
+  /* background-color: #E0AF1A; */
 
 }
 
@@ -28,7 +28,8 @@ body {
 
 
 .navigationDiv {
-  background-color: #00bab1;
+  /* background-color: #00bab1; */
+  background-color: black;
   height: 80px;
   padding: 3px;
   line-height: 80px;
@@ -52,10 +53,15 @@ body {
   height: 50px;
   line-height: 50px;
   margin-top: 20px;
+  /* border: 1px solid #E0AF1A; */
+  border-bottom: 1px solid #00BAB1;
 }
 
 .left-links:hover {
-  text-decoration: underline;
+  /* text-decoration: underline; */
+  /* background-color: #E0AF1A; */
+  background-color: #00BAB1;
+  color: black;
   /* color: #E0AF1A; */
   /* color: #00BAB1; */
 }
@@ -96,11 +102,8 @@ body {
 }
 
 .lowerDiv {
-  background-color: #E4F1FE;
-  /* background-color: #666666; */
-  /* background-color: #013243; */
+  background-color: #293038;
   /* opacity: 0.6; */
-  /* background-color: #22313F; */
   padding-bottom: 20px;
   padding-top: 10px;
 
@@ -139,6 +142,7 @@ body {
 
 
 #descDivs {
+  color: white;
   margin-right: 20px;
   border: none;
   border-top: 1px solid #E0AF1A;

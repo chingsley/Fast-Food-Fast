@@ -1,229 +1,202 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1" >
   <meta charset="utf-8">
-  <link rel="stylesheet" href="stylesheets/manageorders.css">
+  <link rel="stylesheet" href="stylesheets/manageorders.css" >
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 </head>
 <body>
+  <section class="upper-image-container">
 
-  <section class="section_container">
+    <section class="section_container">
+      <div class="navigationDiv">
+        <a href="index.html"><img src="images/homeicon.png" alt="Home" id="home-link"/></a>
+        <a id="signin-link" class="left-links" href="signin.html">Sign Out</a>
+        <a id="signin-link" class="left-links" href="addnewitem.html">Add New Item</a>
+      </div>
+    </section>
+
   </section>
 
   <div class="separatorDiv">
   </div>
 
-  <div class="gridContainer">
+<section class="section-for-main-body" >
 
-          <div class="linkDiv gridItem">
-            <div class="links">
-              <a href="adminlandingpage.html"><strong>Home</strong></a>
-            </div>
-            <div class="links">
-              <a href="../menuPage/menuPage.html"><strong>Veiw menu</strong></a>
-            </div>
-            <div class="links">
-              <a href="signin.html"><strong>Sign Out</strong></a>
-            </div>
-          </div>
+     <!-- ORDER No.1 -->
+     <div class="div-for-order-title complete">
+       <div class="drop-down-arrow" id="arrow"></div>
+       <h4>ORDER R001 [Jorah Mormont]</h4>
+     </div>
+     <div class="div-for-table">
+       <table class="table-for-order-details">
+         <tr>
+           <th>Username</th>
+           <th>Food Item</th>
+           <th>Item ID</th>
+           <th>Quantity</th>
+           <th>Price</th>
+           <th>Calorie Level</th>
+           <th>Date of Delivery</th>
+         </tr>
+         <tr>
+           <td>Jorah Mormont</td>
+           <td>Pancake Vanilla</td>
+           <td>F001</td>
+           <td>3</td>
+           <td>N2000</td>
+           <td>7</td>
+           <td>02-09-2018</td>
+         </tr>
+         <tr>
+           <td class="cell-for-edit" colspan="7">
+             <form class="form-for-status">
+               <h3>Status</h3>
+               <span>Complete</span><input type="radio" name="status" value="complete" checked="checked" class="status-input-radiobtn">
+               <span>Pending</span><input type="radio" name="status" value="pending" class="status-input-radiobtn">
+               <span>Decline</span><input type="radio" name="status" value="decline" class="status-input-radiobtn">
 
-          <div class="tableDiv gridItem">
-            <form>
-                <table id="myTable">
-                  <tr>
-                    <th id="th_serialNo"><strong></strong></th>
-                    <th><strong>Orders</strong></th>
-                    <th><strong>Total price</strong></th>
-                    <th><strong>Delivery time</strong></th>
-                    <th><strong>Accept/Decline</strong></th>
-                    <th><strong>Change Order status</strong></th>
-                    <th><strong>Delete order</strong></th>
-                  </tr>
-                  <tr>
-                    <td class="td_serialNo"><strong>1</strong></td>
-                    <td>order 1 (list)</td>
-                    <td>$50</td>
-                    <td>2/02/28 12:00pm</td>
-                    <td class="accDec declined">DECLINED</td> <!-- class "acc_dec" refers the Accept/Decline cells -->
-                    <td class="status"></td>
-                    <td class="cellDelete"><input type="button" class="btn" value="Delete" /></td>
-                  </tr>
-                  <tr>
-                    <td class="td_serialNo"><strong>2</strong></td>
-                    <td>order 1 (list)</td>
-                    <td>$50</td>
-                    <td>2/02/28 12:00pm</td>
-                    <td class="accDec">ACCEPTED</td>
-                    <td class="status">COMPLETE</td>
-                    <td class="cellDelete"><input type="button" class="btn" value="Delete" /></td>
-                  </tr>
-                  <tr>
-                    <td class="td_serialNo"><strong>3</strong></td>
-                    <td>order 1 (list)</td>
-                    <td>$50</td>
-                    <td>2/02/28 12:00pm</td>
-                    <td class="accDec">ACCEPTED</td>
-                    <td class="status incomplete">INCOMPLETE</td>
-                    <td class="cellDelete"><input type="button" class="btn" value="Delete" /></td>
-                  </tr>
-                  <tr>
-                    <td class="td_serialNo"><strong>4</strong></td>
-                    <td>order 1 (list)</td>
-                    <td>$50</td>
-                    <td>2/02/28 12:00pm</td>
-                    <td class="accDec">ACCEPTED</td>
-                    <td class="status">COMPLETE</td>
-                    <td class="cellDelete"><input type="button" class="btn" value="Delete" /></td>
-                  </tr>
-                  <tr>
-                    <td class="td_serialNo"><strong>5</strong></td>
-                    <td>order 1 (list)</td>
-                    <td>$50</td>
-                    <td>2/02/28 12:00pm</td>
-                    <td class="accDec">ACCEPTED</td>
-                    <td class="status">COMPLETE</td>
-                    <td class="cellDelete"><input type="button" class="btn" value="Delete" /></td>
-                  </tr>
-                </table>
-                <input type="submit" id="submit" value="Save changes" />
-              </form>
-          </div>  <!--End tableDiv -->
+               <input type="submit" value="Save" class="submit">
+             </form>
+           </td>
+         </tr>
+       </table>
+     </div><!--END div-for-table -->
+      <!-- END OF ORDER No.1 -->
 
-  </div>  <!--End gridContainer -->
+       <!-- ORDER No. 2 -->
+     <div class="div-for-order-title pending">
+       <div class="drop-down-arrow" id="arrow"></div>
+       <h4>ORDER R001 [Samuel Tally]</h4>
+     </div>
+     <div class="div-for-table">
+       <table class="table-for-order-details">
+         <tr>
+           <th>Username</th>
+           <th>Food Item</th>
+           <th>Item ID</th>
+           <th>Quantity</th>
+           <th>Price</th>
+           <th>Calorie Level</th>
+           <th>Date of Delivery</th>
+         </tr>
+         <tr>
+           <td>John Snow</td>
+           <td>Pancake Vanilla</td>
+           <td>F001</td>
+           <td>3</td>
+           <td>N2000</td>
+           <td>7</td>
+           <td>02-09-2018</td>
+         </tr>
+         <tr>
+           <td class="cell-for-edit" colspan="7">
+             <form class="form-for-status">
+               <h3>Status</h3>
+               <span>Complete</span><input type="radio" name="status" value="complete" class="status-input-radiobtn">
+               <span>Pending</span><input type="radio" name="status" value="pending" checked="checked" class="status-input-radiobtn">
+               <span>Decline</span><input type="radio" name="status" value="decline" class="status-input-radiobtn">
 
-  <div class="separatorDiv">
-  </div>
+               <input type="submit" value="Save" class="submit">
+             </form>
+           </td>
+         </tr>
+       </table>
+     </div><!--END div-for-table -->
+     <!-- END OF ORDER No.2 -->
 
-  <!-- <script type="text/javascript" src="js/script/js" ></script> -->
+     <!-- ORDER No.3 -->
+     <div class="div-for-order-title decline">
+         <div class="drop-down-arrow" id="arrow"></div>
+       <h4 class="order-title">ORDER R001 [Theon Greyjoy]</h4>
+     </div>
+     <div class="div-for-table">
+       <table class="table-for-order-details">
+         <tr>
+           <th>Username</th>
+           <th>Food Item</th>
+           <th>Item ID</th>
+           <th>Quantity</th>
+           <th>Price</th>
+           <th>Calorie Level</th>
+           <th>Date of Delivery</th>
+         </tr>
+         <tr>
+           <td>Theon Greyjoy</td>
+           <td>Pancake Vanilla</td>
+           <td>F001</td>
+           <td>3</td>
+           <td>N2000</td>
+           <td>7</td>
+           <td>02-09-2018</td>
+         </tr>
+         <tr>
+           <td class="cell-for-edit" colspan="7">
+             <form class="form-for-status">
+               <h3>Status</h3>
+               <span>Complete</span><input type="radio" name="status" value="complete" class="status-input-radiobtn">
+               <span>Pending</span><input type="radio" name="status" value="pending" class="status-input-radiobtn">
+               <span>Decline</span><input type="radio" name="status" value="decline" checked="checked" class="status-input-radiobtn">
+               <input type="submit" value="Save" class="submit">
+             </form>
+           </td>
+         </tr>
+       </table>
+     </div><!--END div-for-table -->
+     <!-- END OF ORDER No.1 -->
 
-  <script>
+  </section><!--END section-for-main-body -->
 
-    {// (#1) MARK ORDERS AS ACCEPTED OR DECLINED }
-        let accDec = document.querySelectorAll('.accDec');
-        console.log(accDec[0].nextSibling.nextElementSibling)
-        for(let i = 0; i < accDec.length; i++) {
+<script>
+    $(document).on('click','.drop-down-arrow', function(){
+            $(this.parentNode).next().slideToggle();
+            // console.log(this);
+            // console.log(this.parentNode);
+            // console.log(this.parentNode.nextElementSibling);
+            // console.log(a);
+            // let a = $(this.parentNode).next()[0];
+            // let arrow = document.getElementById('arrow');
+            // console.log(arrow);
+    });
 
-                  let keep = "";
-                  accDec[i].addEventListener("mouseenter", function() {
-                      keep = accDec[i].innerHTML;
-                      console.log(keep);
-                      if(accDec[i].innerHTML == "ACCEPTED") {
-                          accDec[i].innerHTML = "decline?";
-                      } else {
-                          accDec[i].innerHTML = "accept?";
-                      }
-                  });
+    // console.log(a);
 
+    let radioBtns = document.querySelectorAll('.status-input-radiobtn');
+    // console.log(b);
 
-                  let clicked = false;
-                  accDec[i].addEventListener("click", function() {
-                      clicked = true;
-                      console.log(clicked);
-                  });//end "click" eventListener
+    for(let i = 0; i < radioBtns.length; i++) {
+      radioBtns[i].addEventListener('click', function(){
+        // console.log(this);
+        // console.log(this.value);
+        let form = this.parentNode;
+        // console.log(form);
+        let cell = form.parentNode;
+        // console.log(cell);
+        let table = cell.parentNode.parentNode.parentNode;
+        let divForTable = table.parentNode;
+        // console.log(divForTable);
+        let divForTitle = divForTable.previousElementSibling;
+        // console.log(divForTitle);
 
-
-                  accDec[i].addEventListener("mouseleave", function() {
-                      console.log(clicked);
-                      if (!clicked) {
-                            accDec[i].innerHTML = keep;
-                            if(accDec[i].innerHTML == "DECLINED" || keep == "accept?") {
-                              accDec[i].classList.add("declined");
-                            }
-                      }else {
-                        if(accDec[i].innerHTML == "decline?") {
-                            accDec[i].innerHTML = "DECLINED";
-                            accDec[i].classList.add("declined");
-                            accDec[i].nextSibling.nextElementSibling.innerHTML = "";
-                        } else {
-                            accDec[i].innerHTML = "ACCEPTED";
-                            accDec[i].classList.remove("declined");
-                            accDec[i].nextSibling.nextElementSibling.innerHTML = "INCOMPLETE";
-                            accDec[i].nextSibling.nextElementSibling.classList.add("incomplete");
-                        }
-                      }
-
-                      clicked = false;
-                      console.log(clicked);
-                  });
-
-        }//end for (accDec)
-    }//END (#1)
-
-
-    {// (#2) MARKD ORDER AS COMPLETE OR INCOMPLETE
-       let status = document.querySelectorAll('.status');
-        console.log(status);
-        for(let i = 0; i < status.length; i++) {
-
-              let keep = "";
-
-              status[i].addEventListener("mouseenter", function() {
-                  keep = status[i].innerHTML;
-                  console.log(keep);
-                  if(status[i].innerHTML != "") { // do this only if the cell contains a text.
-                          if(status[i].innerHTML == "COMPLETE") {
-                            status[i].innerHTML = "incomplete?";
-                          } else {
-                            status[i].innerHTML = "complete?";
-                          }
-                  }
-              });//end mouseenter
-
-
-              let clicked = false; //this will be used in mouseleave to check if the cell is clicked
-
-              status[i].addEventListener("click", function() {
-                  clicked = true; //if this status cell is clicked, set clicked to be equal to true;
-                  console.log(clicked);
-              });//end "click" eventListener
-
-
-              status[i].addEventListener("mouseleave", function() {
-                    if(!clicked) { //if the cell is not clicked, leave the status unchanged
-                      status[i].innerHTML = keep;
-                    } else { // if the cell is cliked, toggle the status
-                        if(status[i].innerHTML == "incomplete?") {
-                            status[i].innerHTML =  "INCOMPLETE";
-                            status[i].classList.add("incomplete");
-                        } else if(status[i].innerHTML == "complete?"){
-                            status[i].innerHTML = "COMPLETE";
-                            status[i].classList.remove("incomplete");
-                        } else { //ie when the cell is empty, as in DECLINED order
-                            return;
-                        }
-                    }
-                    clicked = false;
-              });//end mouseleave
-
-        }//end for(.. status.length...)
-
-    }//END(#2)
-
-    {// (#3) DELETE AN ORDER
-
-        // get the table element;
-        let table = document.getElementById("myTable");
-
-        for (let i = 1; i < table.rows.length; i++ ) {
-            // NOTE: the count starts from 1 (instead of 0), because the zero index belongs the header row
-            // console.log(table.rows[i]); // table.rows[i] represents each row of the table
-
-            //add the click event listener to all the cells in the 6th column (the delete column)
-            table.rows[i].cells[6].addEventListener("click", function() {  // cell in the 6th column (the delete column) is clicked
-                let c = confirm("You are about to delete this order");
-                if(c == true) {
-                    let index = this.parentElement.rowIndex; // the index of the row to which the clicked cell belong
-                    table.deleteRow(index);
-                    // console.log(index);
-                }//end if
-            });//end click event
-
-        }//end for
-
-    }//END (#3)
+        if(this.value === 'complete') {
+          divForTitle.classList.remove('pending');
+          divForTitle.classList.remove('decline');
+          divForTitle.classList.add('complete');
+        } else if(this.value === 'pending'){
+          divForTitle.classList.remove('complete');
+          divForTitle.classList.remove('decline');
+          divForTitle.classList.add('pending');
+        } else {
+          divForTitle.classList.remove('complete');
+          divForTitle.classList.remove('pending');
+          divForTitle.classList.add('decline');
+        }
 
 
-  </script>
-
+      });//end eventListener
+    }//end for
+</script>
 
 </body>
 </html>
