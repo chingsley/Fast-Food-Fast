@@ -85,4 +85,43 @@ router.get('/:userId/orders', (req, res, next) => {
   });
 });
 
+//  Handle GET request for a particular orders specified by ID
+router.get('/:orderID', (req, res, next) => {
+  const id = req.params.orderID;
+  const order = messanger.getOrder(id);
+  if (order) {
+    res.status(200).json({
+      "status": 200,
+      "message": "successful",
+      "result": order
+    });
+  } else {
+    res.status(404).json({
+      error: 'The specified id does not match any order in our system',
+    });
+  }
+});
+
+//Handle PUT request updating an order, like setting the status of an order: "pending", "complete", or "declined"
+router.put('/:orderID', (req, res, next) => {
+  // console.log(req.body.status);
+    const id = req.params.orderID;
+    let obj = {
+      status: req.body.status
+    }
+    let updatedOrder = messanger.updateOrder(id, obj);
+    if(updatedOrder){
+      res.status(200).json({
+        status: 200,
+        message: 'order update: Successful!',
+        // order: updatedOrder,
+      });
+    }else {
+      res.status(404).json({
+        error: "not found"
+      });
+    }
+});
+
+
 module.exports = router;
