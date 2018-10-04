@@ -26,7 +26,6 @@ router.get('/', (req, res, next) => {
       "message": "successful",
       "result": result.rows
     }); // Will GET an array of objects
-    // pool.end();
   })
   .catch( function (err){
     console.log(err);
@@ -38,7 +37,6 @@ router.get('/', (req, res, next) => {
 
 // Handle POST request to add an order
 router.post('/', (req, res, next) => {
-  // let id = messanger.getNewID()
   const order = {
      userId : req.body.userId,
      foodItem : req.body.foodItem,
@@ -55,14 +53,12 @@ router.post('/', (req, res, next) => {
       "message": "successful",
       "result": order
     }); // Will GET an array of objects
-    // pool.end();
   })
   .catch( function (err){
     res.status(500).json({
       message: 'Failed to place a new order'
     });
     console.log(err);
-    // pool.end();
   });
 
 });
