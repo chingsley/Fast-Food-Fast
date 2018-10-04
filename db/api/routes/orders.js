@@ -63,5 +63,26 @@ router.post('/', (req, res, next) => {
 
 });
 
+//  Get all the order history belonging to a  specific user
+router.get('/:userId/orders', (req, res, next) => {
+  const id = req.params.userId;
+  const queryText = `SELECT * FROM orders WHERE userId = '${id}'`;
+  pool.query(queryText)
+  .then( function (result) {
+      res.status(200).json({
+        "status": 200,
+        "message": "successful",
+        "result": result.rows
+      });
+  })
+  .catch( function (err){
+    res.status(404).json({
+      "status": 404,
+      message: 'Not Found'
+    });
+    console.log(err);
+    // pool.end();
+  });
+});
 
 module.exports = router;
